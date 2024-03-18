@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import {auth ,provider} from '../../config/firebase'
+import {signInWithPopup} from "firebase/auth"
 import './SignIn.scss';
 
 function SignIn() {
+
+  const [value,setvalue]=useState ('')
+  const handleClick =()=>{
+    signInWithPopup(auth,provider).then((data)=>{
+      setvalue(data.user.email)
+      localStorage.setItem("email",data.user.email)
+    })
+  }
+  useEffect(()=>{
+    setvalue(localStorage.getItem('email'))
+  })
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -62,7 +76,9 @@ function SignIn() {
                 Login
               </button>
               <h3>or</h3>
-              <button>SignIn with Google</button>
+              {value?<Home/>:
+              <button onClick={handleClick}>SignIn with Google</button>
+  }   
             </form>
           </div>
         </div>
