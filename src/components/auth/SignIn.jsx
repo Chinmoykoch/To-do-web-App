@@ -2,14 +2,18 @@ import React, { useEffect, useState } from 'react';
 import {auth ,provider} from '../../config/firebase'
 import {signInWithPopup} from "firebase/auth"
 import './SignIn.scss';
+import Dashboard from '../dashboard/Dashboard';
+import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
+  const navigation = useNavigate()
 
   const [value,setvalue]=useState ('')
   const handleClick =()=>{
     signInWithPopup(auth,provider).then((data)=>{
       setvalue(data.user.email)
       localStorage.setItem("email",data.user.email)
+      navigation('/dashboard')
     })
   }
   useEffect(()=>{
@@ -76,9 +80,9 @@ function SignIn() {
                 Login
               </button>
               <h3>or</h3>
-              {value?<Home/>:
+             
               <button onClick={handleClick}>SignIn with Google</button>
-  }   
+  
             </form>
           </div>
         </div>
