@@ -17,7 +17,6 @@ function SignIn() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here using formData.email and formData.password
     console.log('Login data:', formData);
     setFormData({
       email: '',

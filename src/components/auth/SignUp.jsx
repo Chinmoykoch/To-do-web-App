@@ -16,7 +16,6 @@ function SignUp() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your sign-up logic here using formData.email and formData.password
     console.log("Sign-up data:", formData);
     setFormData({
       email: "",
