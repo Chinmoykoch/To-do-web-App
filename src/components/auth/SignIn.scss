@@ -11,9 +11,8 @@ body {
     background: rgb(26, 149, 177);
 
     .login-page {
-        width: 100%;
-        max-width: 40rem;
-        padding: 2rem;
+        width: 50%;
+        padding: 2.5rem;
         border-radius: 10px;
         height: auto;
         display: flex;
@@ -43,7 +42,7 @@ body {
                 font-weight: 200;
                 padding: 1rem;
                 transition: border .5s;
-                width: 100%;
+                width: 90%;
             }
 
             button {
@@ -56,9 +55,8 @@ body {
                 text-shadow: 1px 1px 0px rgba(0, 0, 0, .1);
                 cursor: pointer;
                 transition: background-color 0.3s;
-                width: 100%;
+                width: 90%;
                 margin-left: 1rem;
-
                 &:hover {
                     background-color: rgb(16, 124, 147);
                 }
@@ -72,14 +70,21 @@ body {
     }
 }
 
-
 @media screen and (max-width: 600px) {
     .login-page {
-        width: 90%;
+        width: 100%;
     }
 
-    .login-form button {
-        width: 100%; 
-        margin-left: 0  ;
+    .login-form {
+        width: 100%;
+        
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            margin-left: 0;
+        }
     }
 }

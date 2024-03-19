@@ -70,8 +70,7 @@ function SignIn() {
                   placeholder="password"
                   name="password"
                   value={formData.password}
-                  onChange={handleInputChange}
-                
+                  onChange={handleInputChange}               
                 />
               </div>
 

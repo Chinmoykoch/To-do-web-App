@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeTodo, handleCheckbox } from '../redux/todoapp/actions';
 import "./dashboard.scss"
 
-
 export const Todos = ({handleEditClick, editFormVisibility}) => {
   const dispatch = useDispatch();
 

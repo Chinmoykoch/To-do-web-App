@@ -29,6 +29,7 @@ function Dashboard() {
       <div className="wrapper">
         <br></br>
         <h1 className="text-center">TODO-WEB APP</h1>
+        <hr />
         <Form editFormVisibility={editFormVisibility} editTodo={editTodo}
         cancelUpdate={cancelUpdate}/>
         <Todos handleEditClick={handleEditClick} editFormVisibility={editFormVisibility}/>
